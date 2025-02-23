@@ -62,7 +62,7 @@ function insertNote(note) {
 function renderNotes() {
     const container = document.getElementById('notesWrapper')
     
-    container.innerHTML = notes.map(note => `<div id="${'noteTemplate' + note.key}" class="flex justify-between items-center px-[10px] py-[2px] border-bottom border-black">
+    container.innerHTML = notes.map(note => `<div id="${'noteTemplate' + note.key}" class="flex justify-between items-center px-[10px] py-[2px] border border-bottom border-black">
         <div id="${'noteInfo' + note.key}" class="flex items-center">
             <input id="${'noteCheck' + note.key}" type="checkbox" class="w-[25px] h-[25px] mr-[5px]" ${note.softDeleted ? 'checked' : ''} onclick="strikeThrough(${note.key})">
             <label id="${'noteTxt' + note.key}" for="${'noteCheck' + note.key}" class="w-[200px] max-h-[150px] leading-[1.2rem] overflow-hidden break-words whitespace-normal text-base ${note.softDeleted ? 'line-through text-gray-500' : ''}">${note.note}</label>
