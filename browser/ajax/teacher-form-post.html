@@ -94,13 +94,13 @@
                 firstName: document.getElementById('firstname').value.trim(),
                 lastName: document.getElementById('lastname').value.trim(),
                 vat: document.getElementById('vat').value.trim(),
-                city: document.getElementById('city').value.trim()
+                cityId: document.getElementById('city').value.trim()
             }
 
             try {
-                const response = await axios.post('https://api-aueb.gr/teachers', formData)
-                console.log('Form submitted successfully:', response.data)
-                alert('Teacher data submitted successfully',JSON.stringify(response.data))
+                // const response = await axios.post('https://api-aueb.gr/teachers', formData)
+                // console.log('Form submitted successfully:', response.data)
+                alert('Teacher data submitted successfully' + JSON.stringify(formData))
 
             } catch (error) {
                 console.error('Error in submitting the form')
@@ -108,6 +108,10 @@
             }
         }
 
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchCities();
+        document.getElementById('teacherForm').addEventListener('submit', handleFormSubmit)
+        })
 
     </script>
 </body>
